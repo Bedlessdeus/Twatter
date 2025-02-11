@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+:root {
+	--bg-color: #ffffff;
+	--text-color: #000000;
+	--primary-color: #1da1f2;
+	--secondary-color: #e1e8ed;
+	--hover-color: #f5f8fa;
+}
+
+[data-theme='dark'] {
+	--bg-color: #15202b;
+	--text-color: #ffffff;
+	--primary-color: #1da1f2;
+	--secondary-color: #38444d;
+	--hover-color: #192734;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.header {
+	background-color: var(--bg-color);
+	border-bottom: 1px solid var(--secondary-color);
+}
+
+.post-container {
+    margin: 0 12.5rem;
+}
+
+.post {
+	border-bottom: 1px solid var(--secondary-color);
+	padding: 10px;
+}
+
+.post-title {
+    font-size: 1.5rem;
+}
+
+.post-text {
+    font-size: 1.15rem;
+}
+
+.post .icon-box {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid var(--secondary-color);
+	padding: 10px;
+}
+
+.POST .ICON-box .icon-value {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.post .icon-box .icon-value .icon-text {
+    text-align: center;
+}
+
+.post .icon-box .icon-value  .icon {
+    width: 2rem;
+}
+
+.post hr  {
+    color: var(--secondary-color);
+    height: 1rem;
+}
+
+.post:hover {
+	background-color: var(--hover-color);
+}
+
+.button {
+	background-color: var(--primary-color);
+	color: #ffffff;
+	border: none;
+	border-radius: 100%;
+	padding: 10px 20px;
+}
+
+.button:hover {
+    cursor: pointer !important;
+}
+
+.input {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1px solid var(--secondary-color);
+	border-radius: 4px;
+	padding: 8px;
+}
+
+.link {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: #15202b;
+		--text-color: #ffffff;
+		--secondary-color: #38444d;
+		--hover-color: #192734;
+	}
+}

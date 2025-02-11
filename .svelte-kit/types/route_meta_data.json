@@ -1,0 +1,18 @@
+{
+	"/": [
+		"src/routes/+page.ts"
+	],
+	"/api/v1/post": [
+		"src/routes/api/v1/post/+server.ts"
+	],
+	"/api/v1/post/like": [
+		"src/routes/api/v1/post/like/+server.ts"
+	],
+	"/api/v1/user": [
+		"src/routes/api/v1/user/+server.ts"
+	],
+	"/api/v1/user/check": [
+		"src/routes/api/v1/user/check/+server.ts"
+	],
+	"/register": []
+}
