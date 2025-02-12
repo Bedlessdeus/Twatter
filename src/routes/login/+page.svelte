@@ -19,10 +19,10 @@
 
 	let error = $state<string[]>([]);
 
-	const handleRegister = async () => {
+	const handleLogin = async () => {
 		if(!validPass || userMessageC === "error") return;
 		const hashedPassword = await bcrypt.hash(username + password, 10);
-		let fe = await fetch(`/api/v1/user/register`, {
+		let fe = await fetch(`/api/v1/user/login`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ username, hash: hashedPassword })
@@ -45,36 +45,18 @@
 			
 			validPass = false;
 		} else {
-			document.cookie = `userHash=${bod.hash}; path=/; max-age=${60 * 60 * 24 * 7}`;
-			document.cookie = `userId=${bod.userId}; path=/; max-age=${60 * 60 * 24 * 7}`;
+			console.log(bod);
+			document.cookie = `userHash=${bod.token}; path=/; max-age=${60 * 60 * 24 * 7}`;
+			document.cookie = `userId=${bod.userID}; path=/; max-age=${60 * 60 * 24 * 7}`;
 			goto('/');
 		}
 	};
 
-	const validateUser = async (): Promise<keyof typeof DAT> => {
-		let fe = await fetch(`/api/v1/user/check?username=${encodeURIComponent(username)}`);
-		let msg = (await fe.json()).message;
-		return msg as keyof typeof DAT;
-	};
-
-	const verifyUserName = async () => {
-		let msg : keyof typeof DAT = await validateUser();
-
-		userMessage = msg in DAT ? DAT[msg] : "Unknown error";
-
-		if(msg === "U01") return userMessageC = userInputC = "success";
-
-		userMessageC = userInputC = "error";
-	};
-
 	const handlePassword = () => {
-		if(password.length < 8) 
-		return setPassMessage("Password must be at least 8 characters long", false);
+		if(password.length < 8 || password.length > 32) 
+		return setPassMessage("Invalid Password", false);
 
-		if(password.length > 32) 
-		return setPassMessage("Password must be less than 32 characters long", false);
-
-		return setPassMessage("Password is valid", true);
+		return setPassMessage("", true);
 	};
 
 	const setPassMessage = (msg: string, valid: boolean) => {
@@ -90,7 +72,7 @@
 
 <div class="bg-gray-100 flex items-center justify-center min-h-screen">
 	<div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-		<h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Create an Account</h2>
+		<h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Login</h2>
 
 		<form id="register">
 			<div>
@@ -103,7 +85,6 @@
 					min="3"
 					max="12"
 					class={userInputC}
-					oninput={verifyUserName}
 				/>
 			</div>
 
@@ -122,16 +103,16 @@
 			<div>
 				<button
 					type="submit"
-					onclick={handleRegister}
+					onclick={handleLogin}
 					disabled={!validPass || userMessageC === "error"}
 				>
-					Register
+					Login
 				</button>
 			</div>
 		</form>
 		<p class="text-center">
-			Already have an account?
-			<a href="/login" class="text-blue-600 hover:underline">Login here</a>.
+			Don't have an account?
+			<a href="/register" class="text-blue-600 hover:underline">Register here</a>.
 		</p>
 	</div>
 </div>

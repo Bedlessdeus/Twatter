@@ -34,6 +34,17 @@ export const getUser = async (userID: UUID): Promise<UserData | null> => {
     return db[userID] || null;
 }
 
+export const getUserByUsername = async (username: string): Promise<UserData | null> => {
+	const db = readFile();
+	return Object.values(db).find(user => user.username === username) || null;
+}
+
+export const getUserId = async (username: string): Promise<UUID | null> => {
+	const db = readFile();
+	const user = Object.entries(db).find(([_, user]) => user.username === username);
+	return user ? stringToUUID(user[0]) : null;
+}
+
 export const containsUser = async (userID: UUID): Promise<boolean> => {
     const db = readFile();
     return !!db[userID];
@@ -49,7 +60,7 @@ export const addPost = async (userID: UUID, title: string, text: string) => {
     const db = readFile();
     if (db[userID]) {
         db[userID].posts.push({
-            post: uuid(),
+            post: stringToUUID(uuid()),
             title: title,
             text: text,
             like: 0,

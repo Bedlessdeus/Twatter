@@ -7,6 +7,7 @@ export const load: PageLoad = async (): Promise<JSON> => {
 		method: 'GET'
 	});
 
-	let js = await f.json();
-	return js.BODY;
+	//let js = await f.json();
+	//js.body
+	return null;
 };
