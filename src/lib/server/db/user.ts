@@ -1,22 +1,25 @@
+import type { UUID } from "crypto";
+
 export type Post = {
-	POST: string;
-	TITLE: string;
+	post: UUID;
+	title: string;
 	text: string;
 	like: number;
 	dislike: number;
 };
 
 export type Interaction = {
-	POST: string;
-	STATUS: string;
+	post: UUID;
+	status: string;
 };
 
 export type UserData = {
-	USERNAME: string;
+	username: string;
+	user_enc: string;
 	posts: Post[];
 	interactions: Interaction[];
 };
 
 export type Database = {
-	[key: string]: UserData;
+	[key: UUID]: UserData;
 };

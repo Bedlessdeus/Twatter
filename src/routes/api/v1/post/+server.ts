@@ -1,16 +1,22 @@
 import { genMissingParam, issame } from '$lib/server/WebUtil';
 import { json, type RequestHandler } from '@sveltejs/kit';
 import { addUser } from '$lib/server/db/dbutil';
+import { env } from '$env/dynamic/private';
+import path from 'path';
+import fs from 'fs';
 
-import data from '$lib/server/db/users.json';
+const filePath = env.DB_PATH || path.join(process.cwd() + '/src/lib/server/db', 'db.json');
 
+const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+//TODO: Unfucketh this
 export const GET: RequestHandler = async ({ request, url }) => {
-	if (!issame([...url.searchParams.keys()], ['USERID'])) {
-		return genMissingParam(['USERID'], [...url.searchParams.keys()]);
+	if (!issame([...url.searchParams.keys()], ['userid'])) {
+		return genMissingParam(['userid'], [...url.searchParams.keys()]);
 	}
 
 	console.log(JSON.stringify(data, null, 2));
-	addUser();
+
 	return json({
 		status: 200,
 		BODY: {
