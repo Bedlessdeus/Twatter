@@ -12,7 +12,7 @@ export type Interaction = {
 };
 
 export type UserData = {
-    USERNAME: string,
+	USERNAME: string;
 	posts: Post[];
 	interactions: Interaction[];
 };

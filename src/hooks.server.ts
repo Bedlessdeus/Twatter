@@ -1,4 +1,3 @@
-
 /*import {connect} from '$lib/server/db/mongo'
 
 connect()
@@ -9,4 +8,3 @@ connect()
     console.log("MongoDB failed to start")
     console.log(e)
 })*/
-

@@ -28,7 +28,7 @@ body {
 }
 
 .post-container {
-    margin: 0 12.5rem;
+	margin: 0 12.5rem;
 }
 
 .post {
@@ -37,39 +37,39 @@ body {
 }
 
 .post-title {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .post-text {
-    font-size: 1.15rem;
+	font-size: 1.15rem;
 }
 
 .post .icon-box {
-    display: flex;
-    flex-direction: row;
-    border-top: 1px solid var(--secondary-color);
+	display: flex;
+	flex-direction: row;
+	border-top: 1px solid var(--secondary-color);
 	padding: 10px;
 }
 
 .POST .ICON-box .icon-value {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding: 0 1rem;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	padding: 0 1rem;
+	text-align: center;
 }
 
 .post .icon-box .icon-value .icon-text {
-    text-align: center;
+	text-align: center;
 }
 
-.post .icon-box .icon-value  .icon {
-    width: 2rem;
+.post .icon-box .icon-value .icon {
+	width: 2rem;
 }
 
-.post hr  {
-    color: var(--secondary-color);
-    height: 1rem;
+.post hr {
+	color: var(--secondary-color);
+	height: 1rem;
 }
 
 .post:hover {
@@ -85,7 +85,7 @@ body {
 }
 
 .button:hover {
-    cursor: pointer !important;
+	cursor: pointer !important;
 }
 
 .input {
@@ -112,4 +112,54 @@ body {
 		--secondary-color: #38444d;
 		--hover-color: #192734;
 	}
+}
+
+
+/* Register */
+form[id='register'] {
+	@apply space-y-4;
+}
+
+form[id='register'] input {
+	@apply mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black;
+}
+
+form[id='register'] button {
+	@apply w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring focus:ring-blue-300;
+}
+
+form[id='register'] button:hover {
+	@apply cursor-pointer;
+}
+
+form[id='register'] button:disabled {
+	@apply bg-gray-400 cursor-not-allowed;
+}
+
+form[id='register'] label, p {
+	@apply text-sm text-gray-600 mt-4;
+}
+
+form[id='register'] label {
+	@apply font-bold;
+}
+
+form[id='register'] label span[class="error"], form[id='register'] label span[class="error"] {
+	@apply text-xs text-right;
+}
+
+form[id='register'] input[class="error"] {
+	@apply border-red-500 shadow-sm focus:ring-red-500 focus:border-red-500 font-normal;
+}
+
+form[id='register'] span[class="error"]  {
+	@apply text-red-500 text-sm font-normal;
+}
+
+form[id='register'] input[class="success"] {
+	@apply border-green-500 shadow-sm focus:ring-green-500 focus:border-green-500 font-normal;
+}
+
+form[id='register'] span[class="success"] {
+	@apply text-green-500 text-sm font-normal;
 }
