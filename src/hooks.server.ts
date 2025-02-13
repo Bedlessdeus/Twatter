@@ -3,6 +3,7 @@ import { getUser, stringToUUID } from '$lib/server/db/dbutil';
 import bcrypt from 'bcryptjs';
 import { validateUser } from '$lib/server/user/user_util';
 import { goto } from '$app/navigation';
+import { redirect } from '@sveltejs/kit';
 
 const allowedPaths = ['/api/v1/user/register', '/api/v1/user/login', '/api/v1/user/check', '/register', '/login'];
 
@@ -14,43 +15,21 @@ export async function handle({ event, resolve }) {
         return resolve(event);
     }
     const cookies = parse(event.request.headers.get('cookie') || '');
-    const userId = cookies.userId;
-    const userHash = cookies.userHash;
-    if (!userId || !userHash) {
-        return new Response('Unauthorized', { status: 401 });
-    }
-
-    /*
-    // Get cookies
-    const cookies = parse(event.request.headers.get('cookie') || '');
     
+    let userID : undefined |  string = cookies.userID;
+    let token : undefined | string = cookies.token;
 
-    // Check if cookies are present
-    if (!userId || !userHash) {
-        return new Response('Unauthorized', { status: 401 });
-    }
+    if(userID == "undefined") userID = undefined;
+    if(token == "undefined") token = undefined;
 
-    // Get user data from the database
-    const user = await getUser(stringToUUID(userId));
-    if (!user) {
-        return new Response('Unauthorized', { status: 401 });
-    }
+    if (!userID || !token)
+        throw redirect(303, '/login')
 
-    // Generate hash to compare
-    const dataToHash = `${user.username}:${event.request.headers.get('user-agent')}`;
-    const isValidHash = await bcrypt.compare(dataToHash, user.user_enc);
+    if(userID === undefined || token === undefined || !await validateUser(userID, token)) 
+        throw redirect(303, '/login')
 
-    // Validate hash
-    if (!isValidHash) {
-        return new Response('Unauthorized', { status: 401 });
-    }*/
-
-    console.log(userId + " " + userHash);
-    if(!validateUser(userId, userHash)) {
-        goto('/login');
-        return new Response('Unauthorized', { status: 401 });
-    }
-
-    // Proceed with the request
+    if(path == "/login" || path == "/register")
+        throw redirect(302, '/')
+    
     return resolve(event);
 }

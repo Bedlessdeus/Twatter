@@ -1,86 +1,34 @@
 import { genMissingParam, issame } from '$lib/server/WebUtil';
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { addUser } from '$lib/server/db/dbutil';
+import { addPost, addUser, getUser, stringToUUID } from '$lib/server/db/dbutil';
 import { env } from '$env/dynamic/private';
 import path from 'path';
 import fs from 'fs';
+import { parse } from 'cookie';
 
 const filePath = env.DB_PATH || path.join(process.cwd() + '/src/lib/server/db', 'db.json');
 
-const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-
-//TODO: Unfucketh this
 export const GET: RequestHandler = async ({ request, url }) => {
-	if (!issame([...url.searchParams.keys()], ['userid'])) {
+	let userID : string | null = url.searchParams.get("userid");
+	if (!issame([...url.searchParams.keys()], ['userid']) || userID == null) {
 		return genMissingParam(['userid'], [...url.searchParams.keys()]);
 	}
 
-	console.log(JSON.stringify(data, null, 2));
+	let userData = await getUser(stringToUUID(userID));
+	if(!userData)
+		return json({message: "Failed to retrieve user info"}, {status: 500})
 
-	return json({
-		status: 200,
-		BODY: {
-			POSTS: [
-				{
-					title: 'Test',
-					text: 'Very important and epic test here',
-					LIKE: 1,
-					DISLIKE: 100
-				},
-				{
-					title: 'Very goood',
-					text: 'Very important and epic test here',
-					LIKE: 90,
-					DISLIKE: 101
-				},
-				{
-					title: 'Not god',
-					text: 'Very important and epic test here',
-					LIKE: 1000,
-					DISLIKE: 100
-				},
-				{
-					title: 'Noice',
-					text: 'Very important and epic test here',
-					LIKE: 10,
-					DISLIKE: 1
-				},
-				{
-					title: 'Cheese',
-					text: 'Very important and epic test here',
-					LIKE: 1,
-					DISLIKE: 1
-				},
-				{
-					title: 'Croissant',
-					text: 'Are you gonna be eating that Croissant?!',
-					LIKE: 5,
-					DISLIKE: 0
-				},
-				{
-					title: 'La Baguette',
-					text: 'That Bagutette :D',
-					LIKE: 10000,
-					DISLIKE: 10
-				},
-				{
-					title: 'Not famous',
-					text: 'Very important and epic test here',
-					LIKE: 9,
-					DISLIKE: 8
-				},
-				{
-					title: 'Not that epic',
-					text: 'Very important and epic test here',
-					LIKE: 10,
-					DISLIKE: 100
-				}
-			]
-		}
-	});
+	return json({posts: userData.posts }, {status: 200});
 };
 
 export const POST: RequestHandler = async ({ request, url }) => {
-	console.log('posted');
+	const bod = await request.json();
+	if(bod.message == null ) return json({message: "No Message"}, {status: 400});
+	if(bod.title == null) return json({message: "No Title"}, {status: 400})
+	const cookie = parse(request.headers.get("cookie") || "")
+	if(cookie.userID == null) return json({message: "Invalid User"}, {status: 400});
+
+	addPost(stringToUUID(cookie.userID), bod.title, bod.message);
+
 	return json({ status: 200 });
 };

@@ -97,6 +97,35 @@ export const containsPost = async (userID: UUID, postID: UUID): Promise<boolean>
     return false;
 }
 
+export const getTopPosts = async (limit : number = 10, offset: number = 0) : Promise<Post[]> => {
+    const db = readFile();
+    const allPosts : Post[] = Object.entries(db).flatMap(([userId, userData]) =>
+        userData.posts.map(  post => ({
+            ...post
+        }))
+    );
+    const sortedPosts = allPosts.sort((a, b) => b.like - a.like);
+    console.log(sortedPosts)
+    console.log(sortedPosts.slice(offset, limit - offset))
+    return sortedPosts.slice(offset, limit - offset);
+}
+
+export const getPoster = async (post : UUID) : Promise<UUID | null> => {
+    const db = readFile();
+    let outValue : UUID | null = null;
+    Object.entries(db).flatMap(([userID, userData]) => {
+        if(outValue != null) return;
+        userData.posts.map(uPo => {
+            if(outValue != null) return;
+            if(uPo.post == post) {
+                outValue = stringToUUID(userID);
+                return;
+            }
+        })
+    })
+    return outValue;
+}
+
 /* File Util */
 const readFile = (): Database => {
     return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Database;

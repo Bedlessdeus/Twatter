@@ -23,3 +23,8 @@ export type UserData = {
 export type Database = {
 	[key: UUID]: UserData;
 };
+
+export type TopPost = {
+	post: Post,
+	username: string
+}

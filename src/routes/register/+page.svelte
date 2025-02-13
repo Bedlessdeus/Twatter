@@ -45,8 +45,8 @@
 			
 			validPass = false;
 		} else {
-			document.cookie = `userHash=${bod.hash}; path=/; max-age=${60 * 60 * 24 * 7}`;
-			document.cookie = `userId=${bod.userId}; path=/; max-age=${60 * 60 * 24 * 7}`;
+			document.cookie = `token=${bod.hash}; path=/; max-age=${60 * 60 * 24 * 7}`;
+			document.cookie = `userID=${bod.userID}; path=/; max-age=${60 * 60 * 24 * 7}`;
 			goto('/');
 		}
 	};
@@ -88,7 +88,8 @@
 	<ErrorBox message={e} duration={5000} on:close={() => error = error.filter(err => err !== e)} />
 {/each}
 
-<div class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="bg-gray-100 flex items-center justify-center min-h-screen flex-col">
+	<img alt="Twatter Logo" src="/twatter-logo_2.svg" width=20% class="pb-10">
 	<div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
 		<h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Create an Account</h2>
 

@@ -92,7 +92,49 @@
   "25b40533-14da-424f-bfae-a871fa3df4de": {
     "username": "God",
     "user_enc": "$2a$15$Y.kzZDfBjf5NxpzFXWfeO.03D.4lhi3.5F.Bm6Xdx5OiAuh.nVyFW",
+    "posts": [
+      {
+        "post": "30929b0f-d080-450d-a547-31ba2cc77895",
+        "title": "God launches hand at child",
+        "text": "This is very important on the 13/02/2025 god came from the heavens and Slapped an 8yo",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "b54016ed-76f9-4c15-a41a-31c4e6119407",
+        "title": "God",
+        "text": "epic gamer",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "57bfd669-75b7-4e28-a21f-1f699f43e486",
+        "title": "Testing XSS",
+        "text": "<script>alert(\"Epic Game\")</script>",
+        "like": 0,
+        "dislike": 0
+      }
+    ],
+    "interactions": []
+  },
+  "785a6b71-dbc5-4297-9fd8-105440aa3430": {
+    "username": "Christianyap",
+    "user_enc": "$2a$15$0e7Du4KNwn.RkNw0LzRiueRSI7T72MOyq/6aJwPH3mR1k/uV1LR5G",
     "posts": [],
+    "interactions": []
+  },
+  "b1f91537-a284-45c1-96b1-91c24ff17f74": {
+    "username": "finnXORchers",
+    "user_enc": "$2a$15$gjzhf62Atmz300uwwBcA1eIvNxHG/e3zKZzMR/DQGsdpu19kVBD/G",
+    "posts": [
+      {
+        "post": "322b536c-6cd8-4cce-9b18-84296ccbd54e",
+        "title": "Testing",
+        "text": "Very nice test text here!",
+        "like": 0,
+        "dislike": 0
+      }
+    ],
     "interactions": []
   }
 }

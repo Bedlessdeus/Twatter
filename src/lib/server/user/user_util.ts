@@ -1,4 +1,4 @@
-import { containsUsername, getUser, stringToUUID } from "../db/dbutil";
+import { containsUsername, getUser, stringToUUID } from "$lib/server/db/dbutil";
 
 export const validateUsername = async (username: string, checkexists : boolean = true): Promise<boolean> => {
     if (username == undefined) return false;
@@ -11,6 +11,7 @@ export const validateUsername = async (username: string, checkexists : boolean =
 
 
 export const validateUser = async (userId: string, userHash : string) => {
+
         if (!userId || !userHash) {
             return false;
         }
