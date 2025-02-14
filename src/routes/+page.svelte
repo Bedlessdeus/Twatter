@@ -3,7 +3,8 @@
 	import Post from '$lib/client/component/Post.svelte';
 	import type { CPost } from './proxy+page.server.js';
 	import { onMount } from 'svelte';
-	import { invalidateAll } from '$app/navigation';
+	import { goto, invalidateAll } from '$app/navigation';
+	import { page } from '$app/state';
 
 	let { data }: PageProps = $props();
 
@@ -25,7 +26,9 @@
 			}
 		)
 
-		await invalidateAll();
+		postTitle = ""
+		postMSG = ""
+		goto("/")
 	});
 
 	const loadItems = async (limit : number, offset : number) => {
@@ -62,15 +65,17 @@
 	</div>
 	<form id="post" class="flex flex-row bg-white w-full p-">
 		<input 
+		id="title"
 		type="text"
-		class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
+		class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
 		bind:value={postTitle}
 		placeholder="Epic Title Here!!"
 		maxlength="32"
 		>
 		<input 
+		ID="msg"
 		type="text"
-		class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
+		class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
 		bind:value={postMSG}
 		placeholder="Your Epic post here!"
 		maxlength="128"
