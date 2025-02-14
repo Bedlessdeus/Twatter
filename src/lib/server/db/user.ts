@@ -28,3 +28,13 @@ export type TopPost = {
 	post: Post,
 	username: string
 }
+
+export type CPost = {
+	poster: UUID;
+	posterUser: string;
+	post: UUID;
+	title: string;
+	text: string;
+	like: number;
+	dislike: number;
+}

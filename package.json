@@ -31,6 +31,7 @@
 		"@types/node": "^22.13.1",
 		"bcryptjs": "^2.4.3",
 		"os": "^0.1.2",
+		"sveltekit-rate-limiter": "^0.6.1",
 		"uuid": "^11.0.5"
 	}
 }

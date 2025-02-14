@@ -21,7 +21,7 @@
 
 	const handleRegister = async () => {
 		if(!validPass || userMessageC === "error") return;
-		const hashedPassword = await bcrypt.hash(username + password, 10);
+		const hashedPassword = await bcrypt.hash(username.toLocaleLowerCase() + password, 10);
 		let fe = await fetch(`/api/v1/user/register`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -45,7 +45,7 @@
 			
 			validPass = false;
 		} else {
-			document.cookie = `token=${bod.hash}; path=/; max-age=${60 * 60 * 24 * 7}`;
+			document.cookie = `token=${bod.token}; path=/; max-age=${60 * 60 * 24 * 7}`;
 			document.cookie = `userID=${bod.userID}; path=/; max-age=${60 * 60 * 24 * 7}`;
 			goto('/');
 		}

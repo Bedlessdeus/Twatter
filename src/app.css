@@ -3,6 +3,7 @@
 :root {
 	--bg-color: #ffffff;
 	--text-color: #000000;
+	--text-secondary-color: #777777;
 	--primary-color: #2563eb;
 	--secondary-color: #d1d5db;
 	--hover-color: #d5e0fd;
@@ -24,43 +25,41 @@ body {
 }
 
 .post {
-	border-bottom: 1px solid var(--secondary-color);
+	border-bottom: 2px solid var(--text-color);
 	padding: 10px;
 }
 
 .post-author {
-	font-size: 1.75rem;
+	font-size: 1.5rem;
+	color: var(--text-color) !important
 }
 
 .post-title {
 	font-size: 1.5rem;
+	color: var(--text-color) !important
 }
 
 .post-text {
 	font-size: 1.15rem;
+	color: var(--text-color) !important
 }
 
 .post .icon-box {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	border-top: 1px solid var(--secondary-color);
 	padding: 10px;
+	height: 100%;
 }
 
-.POST .ICON-box .icon-value {
-	display: flex;
-	flex-direction: column;
+.post .icon-box .icon-text {
+	text-align: center;
 	align-content: center;
-	padding: 0 1rem;
-	text-align: center;
-}
-
-.post .icon-box .icon-value .icon-text {
-	text-align: center;
-}
-
-.post .icon-box .icon-value .icon {
-	width: 2rem;
+	align-items: center;
+	height: 100%;
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
 }
 
 .post hr {
@@ -84,6 +83,11 @@ body {
 .button:hover {
 	cursor: pointer !important;
 	background-color: var(--hover-color);
+}
+
+form[id="post"] {
+	position: fixed;
+	bottom: 0;
 }
 
 .input {

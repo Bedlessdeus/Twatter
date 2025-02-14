@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { DAT } from "$lib/client/message";
 	import bcrypt from 'bcryptjs';
 	import ErrorBox from "$lib/module/ErrorBox.svelte";
 	import { goto } from '$app/navigation';
@@ -21,11 +20,11 @@
 
 	const handleLogin = async () => {
 		if(!validPass || userMessageC === "error") return;
-		const hashedPassword = await bcrypt.hash(username + password, 10);
+		const hashedPassword = bcrypt.hashSync(username.toLocaleLowerCase() + password, 10);
 		let fe = await fetch(`/api/v1/user/login`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ username, hash: hashedPassword })
+			body: JSON.stringify({ username: username, token: hashedPassword })
 		});
 		let bod = await fe.json()
 		if(!fe.ok) {

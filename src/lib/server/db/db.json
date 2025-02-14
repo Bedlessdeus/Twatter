@@ -1,140 +1,282 @@
 {
-  "c3ecb049-0e75-474a-9933-4281c694289a": {
-    "useruri": "",
-    "username": "GodSlayer",
-    "posts": [],
-    "interactions": []
-  },
-  "35959ced-44b6-407e-aa69-2b71996be302": {
-    "username": "123",
-    "user_enc": "$2a$15$jx01oszd18oDbaliujsrYO80waWwJrg9aT2bTpscnFyBgUJ4wSZG2",
-    "posts": [],
-    "interactions": []
-  },
-  "fa51b559-b406-4346-bc4f-06bc7938ca32": {
-    "username": "1234",
-    "user_enc": "$2a$15$SRc9NpqYkIpDOeNjmCDJHeQldu.p0f5aD7NfOWwFcRiE3BonxDG5S",
-    "posts": [],
-    "interactions": []
-  },
-  "2503afca-5974-4a3c-ae2c-944671e0562d": {
-    "username": "12345",
-    "user_enc": "$2a$15$mpgLQQ6BwF777F.QHJsIhO768jWWSzm2kFHYOgmv4a6xG9KeOlqy.",
-    "posts": [],
-    "interactions": []
-  },
-  "905aa912-2d34-4630-9449-b493b0fa7378": {
-    "username": "1231",
-    "user_enc": "$2a$15$6JB5BaNFawA3a2oN675ndOnOr/xav0hcrWOXHRoBNC8xBjkBp/uby",
-    "posts": [],
-    "interactions": []
-  },
-  "693d2009-7bdb-4785-8d7c-66d81b3b3bbe": {
-    "username": "12311",
-    "user_enc": "$2a$15$C3AciXYEsXojimQlNlIsJeTOAfVgU3oZ6uG8jSo9OTPmyWDyN2lZ6",
-    "posts": [],
-    "interactions": []
-  },
-  "9171ed59-8d56-460d-acfd-d32c62ea3bbd": {
-    "username": "123111",
-    "user_enc": "$2a$15$7Nfh0xe0WNbh9BzgyDUZdey/U.2C4lzHNak7uHfyVbflqF8L2ppL6",
-    "posts": [],
-    "interactions": []
-  },
-  "4cdd0bca-39b0-40c8-8d38-29c88c52393e": {
-    "username": "123111",
-    "user_enc": "$2a$15$iuq8UR8VqtAajOl1EFGc0Og93W61iNXfvbiaGavz6jBfTGHgQUgnW",
-    "posts": [],
-    "interactions": []
-  },
-  "a93d6cd7-41a3-4e51-bd6a-f1f7251df2ea": {
-    "username": "123123",
-    "user_enc": "$2a$15$XBkQKFDiu4KAD/zxcw24S.eB/9yCe5W094MmheAltCj.l6d3F3hve",
-    "posts": [],
-    "interactions": []
-  },
-  "df78b773-4fa3-475d-8531-635ea6998745": {
-    "username": "123123",
-    "user_enc": "$2a$15$NnDJaTZzofG.OeWh/6lIBegKGrh0uiHJ4yHGPgy3TEyIUtycCn.HG",
-    "posts": [],
-    "interactions": []
-  },
-  "0cc3151d-668b-4197-8291-dc39c1e62fa9": {
-    "username": "123123123",
-    "user_enc": "$2a$15$hXL6ABOQrgbReHoY947gQ.gmCEmJAat3t6AIMr.dwsYVYDOOKxsja",
-    "posts": [],
-    "interactions": []
-  },
-  "22a47901-1120-465a-b95a-963d3557520d": {
-    "username": "123123123123",
-    "user_enc": "$2a$15$2q6HVgCtTLpIuS1y4FIGW.qjeWmJKSQwNsvvndsGucNiBtREPVK1.",
-    "posts": [],
-    "interactions": []
-  },
-  "7577a732-60cd-4d59-b291-9064d86a841d": {
-    "username": "1231231231",
-    "user_enc": "$2a$15$xJuvgqhyWHYvwNuj8lWx/exQG/VciYUpcWNEKVBfklgBZHZDekgIm",
-    "posts": [],
-    "interactions": []
-  },
-  "4e667190-5181-42d4-82db-44b5bc95963d": {
-    "username": "1111",
-    "user_enc": "$2a$15$.qduztT4gqFtJUF1hXOnV.XBMOMq5VcOx1Brg/4icryOiMh7FMYZy",
-    "posts": [],
-    "interactions": []
-  },
-  "e8551fc4-1aa0-42b1-b99c-32d599ff46e8": {
-    "username": "1111",
-    "user_enc": "$2a$15$VwnJlNJcp9EQ1ZCdBGMbg.EX/nfj42vpTg.I9C8.RiIkV3Qc8sfhO",
-    "posts": [],
-    "interactions": []
-  },
-  "25b40533-14da-424f-bfae-a871fa3df4de": {
-    "username": "God",
-    "user_enc": "$2a$15$Y.kzZDfBjf5NxpzFXWfeO.03D.4lhi3.5F.Bm6Xdx5OiAuh.nVyFW",
+  "84187c90-37ba-4d2b-b392-1edcfdf8d158": {
+    "username": "Alexander",
+    "user_enc": "$2a$15$pSwMP.g/tn9YFbRBGoxqm.JCKh10fQYvqESeCct3GR74nY0qTBHfq",
     "posts": [
       {
-        "post": "30929b0f-d080-450d-a547-31ba2cc77895",
-        "title": "God launches hand at child",
-        "text": "This is very important on the 13/02/2025 god came from the heavens and Slapped an 8yo",
+        "post": "a1b2c3d4-e5f6-4g7h-8i9j-0k1l2m3n4o5p",
+        "title": "New Project Launch 🎉",
+        "text": "Excited to announce the launch of our new project! Check it out on our website.",
         "like": 0,
         "dislike": 0
       },
       {
-        "post": "b54016ed-76f9-4c15-a41a-31c4e6119407",
-        "title": "God",
-        "text": "epic gamer",
+        "post": "9876fedc-ba98-7654-3210-fedcba987654",
+        "title": "Tech Tip Tuesday",
+        "text": "Here's a quick tech tip: Use keyboard shortcuts to save time! #productivity #techtips",
         "like": 0,
         "dislike": 0
       },
       {
-        "post": "57bfd669-75b7-4e28-a21f-1f699f43e486",
-        "title": "Testing XSS",
-        "text": "<script>alert(\"Epic Game\")</script>",
+        "post": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+        "title": "Weekend Plans?",
+        "text": "What are your plans for the weekend? I'm thinking of going hiking.",
         "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "abcdef12-3456-7890-abcd-ef1234567890",
+        "title": "Book Recommendation 📚",
+        "text": "Just finished reading an amazing book! Highly recommend it. #bookrecommendation",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "11223344-5566-7788-99aa-bbccddeeff00",
+        "title": "Foodie Friday! 🍕",
+        "text": "Trying out a new pizza place tonight! Can't wait! #foodie #pizza",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "aabbccdd-eeff-0011-2233-445566778899",
+        "title": "Travel Inspiration ✈️",
+        "text": "Dreaming of my next travel destination. Where should I go?",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "12345678-9abc-def0-1234-56789abcdef0",
+        "title": "Motivation Monday 💪",
+        "text": "Starting the week strong! Remember to set your goals and crush them.",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "98765432-1fed-cba9-8765-4321fedcba98",
+        "title": "Coding Challenge 💻",
+        "text": "Working on a fun coding challenge. Always learning! #coding",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "11111111-2222-3333-4444-555555555555",
+        "title": "Gaming News 🎮",
+        "text": "New game release looks amazing! Anyone else excited to play?",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+        "title": "DIY Project 🔨",
+        "text": "Working on a fun DIY project this weekend. Stay tuned for the results!",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "22222222-3333-4444-5555-666666666666",
+        "title": "Music Mood 🎶",
+        "text": "Listening to my favorite playlist. Music is the best therapy.",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "bbbbbbbb-cccc-dddd-eeee-ffffffffffff",
+        "title": "Pet Pic 🐾",
+        "text": "My furry friend is being extra cute today! #pets #dog",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "33333333-4444-5555-6666-777777777777",
+        "title": "Weather Update ☀️",
+        "text": "Beautiful sunny day! Perfect for a walk in the park.",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "cccccccc-dddd-eeee-ffff-gggggggggggg",
+        "title": "Quote of the Day",
+        "text": "'The only way to do great work is to love what you do.' - Steve Jobs",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "44444444-5555-6666-7777-888888888888",
+        "title": "Fitness Goals 🏃‍♀️",
+        "text": "Just finished a great workout! Feeling energized. #fitness",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "dddddddd-eeee-ffff-0000-hhhhhhhhhhhh",
+        "title": "Movie Night 🎬",
+        "text": "Planning a movie night with friends. Any recommendations?",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "55555555-6666-7777-8888-999999999999",
+        "title": "Art Inspiration 🎨",
+        "text": "Visiting an art museum today. So much inspiration!",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "eeeeeeee-ffff-0000-1111-iiiiiiiiiiii",
+        "title": "Thoughts on AI? 🤖",
+        "text": "What are your thoughts on the future of AI? Interesting topic!",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "66666666-7777-8888-9999-aaaaaaaaaaaa",
+        "title": "Thankful Thursday 🙏",
+        "text": "Grateful for all the good things in my life. Happy Thursday!",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "70bcab42-6436-4018-815b-1cef5a631047",
+        "title": "God Slapped a child",
+        "text": "Hello, im here to inform you that god came down from the heavens and absolutely obliterated a child with a slap at mach 10.",
+        "like": 2,
+        "dislike": 0
+      },
+      {
+        "post": "f8a7b6c5-d4e3-4a2b-9c1d-0e2f3a4b5c6d",
+        "title": "Morning Coffee ☕",
+        "text": "Just enjoying my morning coffee before diving into work. Happy Friday, everyone!",
+        "like": 1,
         "dislike": 0
       }
     ],
-    "interactions": []
+    "interactions": [
+      {
+        "post": "70bcab42-6436-4018-815b-1cef5a631047",
+        "status": "LIKE"
+      }
+    ]
   },
-  "785a6b71-dbc5-4297-9fd8-105440aa3430": {
-    "username": "Christianyap",
-    "user_enc": "$2a$15$0e7Du4KNwn.RkNw0LzRiueRSI7T72MOyq/6aJwPH3mR1k/uV1LR5G",
-    "posts": [],
-    "interactions": []
-  },
-  "b1f91537-a284-45c1-96b1-91c24ff17f74": {
-    "username": "finnXORchers",
-    "user_enc": "$2a$15$gjzhf62Atmz300uwwBcA1eIvNxHG/e3zKZzMR/DQGsdpu19kVBD/G",
+  "527e2705-cde7-42cc-a037-f879d901f6df": {
+    "username": "Joel",
+    "user_enc": "$2a$15$m.gQlNiA/fkiUy.PUDJhpOROV7CF9.YJk7IC3gSz521IEQrFKCMbm",
     "posts": [
       {
-        "post": "322b536c-6cd8-4cce-9b18-84296ccbd54e",
-        "title": "Testing",
-        "text": "Very nice test text here!",
+        "post": "57cd4cdb-5ebe-4dcf-8124-06a7090e61bc",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "e5fd3e54-3f42-4b72-84c9-125cd74f7861",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "8a9bb332-7e28-44cf-b4ce-095642dd2a13",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "40ebae32-068a-4cae-868a-67227fddd9cd",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "aedf0669-662f-4feb-a636-7d627ae45656",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "7ec7d661-2c2e-4e4e-98df-a2ebfb632d39",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "639b5285-213d-4d03-a9bf-bc91e8bef9ef",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "1986881e-147f-4a46-b3a6-1707f018a1aa",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "ab73cb2d-6f96-404b-b4fe-c44f230252af",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "9b0101cf-73fc-4ea6-abc2-c5e4c3dfaccc",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "b05fd4e1-a54d-49c9-99e3-16b3877ae5ca",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "3dfa4282-835a-4b20-b297-f56a714e9a8a",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "ac20d431-18a6-4a3e-9ec5-744359f208df",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "c5651a58-18f3-4e57-97ca-77647d363635",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
+        "like": 0,
+        "dislike": 0
+      },
+      {
+        "post": "e3d8207d-eda0-4b94-ac59-fd508fca7825",
+        "title": "Bad Topic 🚒",
+        "text": "LOLOLOLOLO",
         "like": 0,
         "dislike": 0
       }
     ],
-    "interactions": []
+    "interactions": [
+      {
+        "post": "70bcab42-6436-4018-815b-1cef5a631047",
+        "status": "LIKE"
+      },
+      {
+        "post": "f8a7b6c5-d4e3-4a2b-9c1d-0e2f3a4b5c6d",
+        "status": "LIKE"
+      }
+    ]
   }
 }
