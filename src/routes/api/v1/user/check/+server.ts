@@ -8,12 +8,10 @@ export const GET: RequestHandler = ({ url }) => {
 	}
 
 	let user = url.searchParams.get('username');
-	if(user == undefined) return sendMSG("U03");
-	if(!/^[a-zA-Z0-9]{3,12}$/.test(user)) return sendMSG("U04");
-	if(containsUsername(user)) return sendMSG("U02");
-    return sendMSG("U01");
+	if(user === undefined || !/^[a-zA-Z0-9]{3,12}$/.test(user?? "") || containsUsername(user?? "")) return sendMSG(false);
+    return sendMSG(true);
 };
 
-const sendMSG = (msg: string) => {
-	return json({ status: 200, message: msg });
+const sendMSG = (isValid: boolean) => {
+	return json({ status: 200, valid: isValid });
 };

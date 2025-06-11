@@ -133,3 +133,5 @@ dist
 
 *.env
 process.env
+process.env
+/src/data

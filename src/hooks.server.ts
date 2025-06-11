@@ -16,7 +16,7 @@ const allowedPaths = [
 	'api/v1/post'
 ];
 
-export async function authentication({ event, resolve }) {
+export const authentication: Handle = async ({ event, resolve }) => {
 	const url = new URL(event.request.url);
 	const path = url.pathname;
 
@@ -39,13 +39,12 @@ export async function authentication({ event, resolve }) {
 	if (path == '/login' || path == '/register') throw redirect(302, '/');
 
 	return resolve(event);
-}
+};
 
 const limiter = new RateLimiter({
-	IP: [600, 'h'],
-	IPUA: [100, 'm']
+	IP: [50, 'h'],
+	IPUA: [20, 'm']
 });
-
 
 export const handleRateLimit: Handle = async ({ event, resolve }) => {
 	const url = new URL(event.request.url);

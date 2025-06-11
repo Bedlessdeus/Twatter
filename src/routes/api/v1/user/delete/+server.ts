@@ -1,3 +1,4 @@
+import { MASTER_TOKEN } from '$env/static/private';
 import { removeUser, stringToUUID } from '$lib/server/db/dbutil';
 import { genMissingParam } from '$lib/server/WebUtil';
 import { issame } from '$lib/server/WebUtil';
@@ -9,7 +10,7 @@ export const GET: RequestHandler =  ({ request, url }) => {
 		return genMissingParam(['userid'], [...url.searchParams.keys()]);
 
 	const cookies = parse(request.headers.get('cookie') || '');
-	if (cookies.token != '$2a$15$pSwMP.g/tn9YFbRBGoxqm.JCKh10fQYvqESeCct3GR74nY0qTBHfq')
+	if (cookies.token != MASTER_TOKEN)
 		return json({ message: 'Unauthorized' }, { status: 401 });
 
 	removeUser(stringToUUID(url.searchParams.get('userid') ?? ''));

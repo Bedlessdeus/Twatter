@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { env } from '$env/dynamic/private';
 import type { UUID } from 'crypto';
 
-const filePath = env.DB_PATH || path.join(process.cwd() + '/src/lib/server/db', 'db.json');
+const filePath = env.DB_LOCAL_PATH || path.join(process.cwd() + '/src/lib/server/db', 'db.json');
 
 /* File Util */
 const readFile = (): Database => {

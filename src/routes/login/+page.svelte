@@ -1,68 +1,22 @@
 <script lang="ts">
-	import bcrypt from 'bcryptjs';
+	import { enhance } from '$app/forms';
 	import ErrorBox from "$lib/module/ErrorBox.svelte";
-	import { goto } from '$app/navigation';
 
-	let username = $state('');
-	let password = $state('');
+	export let form: any;
 
-	let userInputC = $state("");
-	let userMessageC = $state("");
-	let userMessage = $state("");
+	let username = "";
+	let password = "";
 
-	let passInputC = $state("");
-	let passMessageC = $state("");
-	let passMessage = $state("");
+	$: userInputC = form?.userMessageC || "";
+	$: userMessage = form?.userMessage || "";
 
-	let validPass = $state(false);
+	$: passInputC = form?.passMessageC || "";
+	$: passMessage = form?.passMessage || "";
 
-	let error = $state<string[]>([]);
+	let error: string[] = [];
 
-	const handleLogin = async () => {
-		if(!validPass || userMessageC === "error") return;
-		const hashedPassword = bcrypt.hashSync(username.toLocaleLowerCase() + password, 10);
-		let fe = await fetch(`/api/v1/user/login`, {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ username: username, token: hashedPassword })
-		});
-		let bod = await fe.json()
-		if(!fe.ok) {
-			userMessage = bod.message;
-			if(error.includes(bod.message)) delete error[error.indexOf(bod.message)];
-			error.push(bod.message);
-			username = "";
-			password = "";
-
-			userMessageC = "";
-			userInputC = "";
-			userMessage = "";
-
-			passMessageC = "";
-			passInputC = "";
-			passMessage = "";
-			
-			validPass = false;
-		} else {
-			console.log(bod);
-			document.cookie = `token=${bod.token}; path=/; max-age=${60 * 60 * 24 * 7}`;
-			document.cookie = `userID=${bod.userID}; path=/; max-age=${60 * 60 * 24 * 7}`;
-			goto('/');
-		}
-	};
-
-	const handlePassword = () => {
-		if(password.length < 8 || password.length > 32) 
-		return setPassMessage("Invalid Password", false);
-
-		return setPassMessage("", true);
-	};
-
-	const setPassMessage = (msg: string, valid: boolean) => {
-		passMessage = msg;
-		passMessageC = passInputC = valid ? "success" : "error";
-		validPass = valid;
-	};
+	$: if (form?.userMessage && !error.includes(form.userMessage)) error.push(form.userMessage);
+	$: if (form?.passMessage && !error.includes(form.passMessage)) error.push(form.passMessage);
 </script>
 
 {#each error as e (e)}
@@ -70,46 +24,50 @@
 {/each}
 
 <div class="bg-gray-100 flex items-center justify-center min-h-screen flex-col">
-	<img alt="Twatter Logo" src="/twatter-logo_2.svg" class="pb-10 w-md">
+	<img alt="Twatter Logo" src="/twatter-logo_2.svg" class="pb-10 w-md" />
 	<div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
 		<h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Login</h2>
 
-		<form id="register">
+		<form method="POST" use:enhance id="register">
 			<div>
-				<label for="username">Username<br><span class={userMessageC}>{userMessage}</span></label>
+				<label for="username">
+					Username<br />
+					<span class={userInputC}>{userMessage}</span>
+				</label>
 				<input
 					type="text"
-					id="Username"
+					id="username"
+					name="username"
 					bind:value={username}
 					placeholder="Bedlessdeus"
-					min="3"
-					max="12"
+					minlength="3"
+					maxlength="12"
 					class={userInputC}
 				/>
 			</div>
 
 			<div>
-				<label for="password">Password<br><span class={passMessageC}>{passMessage}</span></label>
+				<label for="password">
+					Password<br />
+					<span class={passInputC}>{passMessage}</span>
+				</label>
 				<input
 					type="password"
 					id="password"
+					name="password"
 					bind:value={password}
 					placeholder="********"
 					class={passInputC}
-					oninput={handlePassword}
 				/>
 			</div>
 
 			<div>
-				<button
-					type="submit"
-					onclick={handleLogin}
-					disabled={!validPass || userMessageC === "error"}
-				>
+				<button type="submit">
 					Login
 				</button>
 			</div>
 		</form>
+
 		<p class="text-center">
 			Don't have an account?
 			<a href="/register" class="text-blue-600 hover:underline">Register here</a>.
