@@ -4,6 +4,7 @@
 	import type { CPost } from './proxy+page.server.js';
 	import { enhance } from '$app/forms';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 
 	let { data }: PageProps = $props();
 	let posts: CPost[] = $state(data.posts);
@@ -40,7 +41,26 @@
 		{/each}
 	</div>
 
-	<form method="POST" use:enhance class="sticky bottom-0 bg-white w-full">
+	<form
+		method="POST"
+		use:enhance={() => {
+			postTitle = postMSG = '';
+			return async ({ result }) => {
+				if (result.type === 'redirect') {
+					console.log('Redirecting to:', result.location);
+					if (result.location === location.pathname) {
+						location.reload();
+					} else {
+						goto(result.location);
+					}
+				} else if (result.type === 'success') {
+					console.log('Post created successfully');
+					location.reload();
+				}
+			};
+		}}
+		class="sticky bottom-0 bg-white w-full"
+	>
 		<div class="flex flex-row">
 			<input
 				name="title"
